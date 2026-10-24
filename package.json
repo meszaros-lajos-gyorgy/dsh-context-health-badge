@@ -1,0 +1,59 @@
+{
+  "name": "dsh-context-health-badge",
+  "version": "1.0.0",
+  "description": "Always-visible context-window and thread-health badge in the DeepSeek Harness Web GUI composer.",
+  "license": "MIT",
+  "author": "Mészáros Lajos György",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meszaros-lajos-gyorgy/dsh-context-health-badge.git"
+  },
+  "homepage": "https://github.com/meszaros-lajos-gyorgy/dsh-context-health-badge#readme",
+  "bugs": {
+    "url": "https://github.com/meszaros-lajos-gyorgy/dsh-context-health-badge/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "context-window",
+    "compaction",
+    "tokens",
+    "web-gui"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "default": "./index.js"
+    },
+    "./client": {
+      "default": "./client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-chat"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node test/client.test.mjs"
+  }
+}

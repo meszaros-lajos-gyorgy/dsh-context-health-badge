@@ -1,0 +1,8 @@
+# Bundle layer contributed by dsh-context-health-badge.
+#
+# The row is addressed by package name because an installed profile resolves it
+# from node_modules. It inserts the plugin's single host entry; the client half
+# arrives through the package's `dsh.client` declaration.
+- insert:
+    - id: context-health-badge
+      name: dsh-context-health-badge
